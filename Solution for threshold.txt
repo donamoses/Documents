@@ -1,0 +1,18 @@
+Solution for threshold
+
+let listItemsResult = await subWeb.getList("/sites/" + hubsite + "/Lists/" + listName)
+
+        .items
+
+        .orderBy("Title", true).top(4000).getPaged();
+
+      listItems = listItemsResult.results;
+
+
+      while (listItemsResult.hasNext) {
+
+        listItemsResult = await listItemsResult.getNext();
+
+        listItems.push(...(listItemsResult.results));      
+
+      }

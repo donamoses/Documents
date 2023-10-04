@@ -1,0 +1,39 @@
+Hide Socialbar
+
+#Parameters
+$TenantAdminURL = "https://ccsdev01.sharepoint.com"
+$SiteURL = "https://ccsdev01.sharepoint.com/sites/AccessScienceTest"
+
+#Connect to Tenant Admin
+Connect-PnPOnline -Url $TenantAdminURL -Credentials (Get-Credential)
+
+#Disable Social Bar on Site Pages
+
+
+Set-SPOSite -Identity $SiteURL -SocialBarOnSitePagesDisabled $True
+
+ 
+
+ 
+
+#Set Parameters
+
+$AdminCenterURL="https://crescent-admin.sharepoint.com"
+
+$SiteURL = "https://crescent.sharepoint.com/sites/marketing"
+
+ 
+
+#Connect to SharePoint Online
+
+Connect-SPOService -Url $AdminCenterURL -Credential (Get-Credential)
+
+ 
+
+#Disable Social Bar on Site Pages
+
+Set-SPOSite -Identity $SiteURL -SocialBarOnSitePagesDisabled $True
+
+
+
+#Read more: https://www.sharepointdiary.com/2019/02/sharepoint-online-disable-social-bar-on-modern-pages.html#ixzz7vwwoBIHq
