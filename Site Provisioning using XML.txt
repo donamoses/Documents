@@ -1,0 +1,50 @@
+Site Provisioning using XML
+
+List
+-----
+1. Connect-PnPOnline -Url https://4n37nt.sharepoint.com/sites/ccsQDMS   -Credentials (Get-Credential)
+
+
+
+
+2. Get-PnPSiteTemplate -Out D:\Sreemol\siteXML\43n7ntQDMSXML\qdms.xml -Handlers Lists
+
+
+
+
+//Remove all calculated fields
+
+
+
+
+3. Connect-PnPOnline -Url https://ccsdev01.sharepoint.com/sites/QDMSCCS   -Credentials (Get-Credential)
+
+
+
+
+
+4.  Invoke-PnPSiteTemplate -Path C:\Sitexml\PnpTemplate\template.xml
+
+
+
+
+
+Clientside Pages
+-----------------------
+1. Connect-PnPOnline -Url https://4n37nt.sharepoint.com/sites/ccsQDMS
+
+
+
+
+2. Get-PnPSiteTemplate -Out D:\Sreemol\siteXML\43n7ntQDMSXML\qdmsPages.xml -Handlers PageContents -IncludeAllClientSidePages
+
+
+
+
+
+3. Connect-PnPOnline -Url https://ccsdev01.sharepoint.com/sites/QDMSCCS  
+
+
+
+
+4.Invoke-PnPSiteTemplate -Path D:\Sreemol\siteXML\43n7ntQDMSXML\qdmsPages.xml

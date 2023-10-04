@@ -1,0 +1,11 @@
+Create APPCATALOG
+
+#Parameters
+$TenantAdminURL = "https://ccsdev01.sharepoint.com"
+$SiteURL = "https://ccsdev01.sharepoint.com/sites/AccessScienceTest"
+
+#Connect to Tenant Admin
+Connect-PnPOnline -Url $TenantAdminURL -Credentials (Get-Credential)
+
+#Enable site collection app catalog
+Add-PnPSiteCollectionAppCatalog -Site $SiteURL
